@@ -1,0 +1,2 @@
+class YogamapController < ApplicationController
+end

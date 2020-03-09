@@ -1,0 +1,2 @@
+module YogamapHelper
+end
