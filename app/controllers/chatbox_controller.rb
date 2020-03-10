@@ -1,0 +1,2 @@
+class ChatboxController < ApplicationController
+end
