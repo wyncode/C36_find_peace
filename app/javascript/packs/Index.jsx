@@ -4,7 +4,7 @@
 
 import React from "react";
 import ReactDOM from "react-dom";
-import Staticpage from "../components/staticpage";
+import Staticpage from "../components/StaticPage";
 
 document.addEventListener("DOMContentLoaded", () => {
   ReactDOM.render(
