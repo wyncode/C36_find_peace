@@ -10,8 +10,32 @@
 //   width: 50%;
 // }
 
+.teamImages {
+  padding-top: 10em;
+}
+
 #about-image {
-  height: 500px;
-  width: 70%;
+  height: 20%;
+
   border-radius: 30%;
 }
+#teamImage {
+  border-radius: 30%;
+  justify-content: center;
+}
+#team-content {
+  flex-shrink: 0;
+  width: 50%;
+  text-align: justify;
+}
+
+#gitHub {
+  justify-content: center;
+}
+
+.teamBox {
+  height: 60%;
+  width: 40%;
+  justify-content: center;
+}
+//
