@@ -2,13 +2,14 @@
 // like app/views/layouts/application.html.erb. All it does is render <div>Hello React</div> at the bottom
 // of the page.
 
-import React from "react";
-import ReactDOM from "react-dom";
-import Staticpage from "../components/StaticPage";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Staticpage from '../components/StaticPage';
+import About from '../components/About';
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
-    <Staticpage />,
-    document.body.appendChild(document.createElement("div"))
+    <About />,
+    document.body.appendChild(document.createElement('div'))
   );
 });
