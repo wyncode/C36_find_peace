@@ -14,11 +14,16 @@ import ReactOnRails from "react-on-rails";
 import About from "../bundles/components/About";
 import StaticPage from "../bundles/components/StaticPage";
 import Help from "../bundles/components/Help";
+import Chat from '../bundles/Chat'
+import Map from '../bundles/Map'
 
 ReactOnRails.register({
     About,
     StaticPage,
     Help,
+    Chat,
+    Map
+
 });
 
 // Uncomment to copy all static images under ../images to the output folder and reference
