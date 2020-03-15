@@ -1,13 +1,13 @@
-import React from 'react';
-import SheaHannah from '../../assets/images/SheaHannah.jpg';
-import StRemySonia from '../../assets/images/StRemySonia.jpg';
-import KeranoraKrisi from '../../assets/images/KeranoraKrisi.jpg';
-import FavardTristan from '../../assets/images/FavardTristan.jpg';
+import React from "react";
+import SheaHannah from "../../../assets/images/SheaHannah.jpg";
+import StRemySonia from "../../../assets/images/StRemySonia.jpg";
+import KeranoraKrisi from "../../../assets/images/KeranoraKrisi.jpg";
+import FavardTristan from "../../../assets/images/FavardTristan.jpg";
 
 const About = () => {
   return (
     <>
-      <div class="teamImages">
+      <div className="teamImages">
         <div id="teamImage">
           <img src={SheaHannah} alt="TeamImage" id="about-image" />;
         </div>
@@ -25,4 +25,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default () => <About />;

@@ -2,11 +2,10 @@ import React, { useState, useEffect } from "react";
 import ReactPlayer from "react-player";
 import axios from "axios";
 
-const vidStyle = {
-  padding: "1%"
-};
-
-const Staticpage = () => {
+const StaticPage = () => {
+  const vidStyle = {
+    padding: "1%"
+  };
   // looping through video data table goes here//
 
   const [videos, setVideos] = useState([]);
@@ -47,4 +46,4 @@ const Staticpage = () => {
   );
 };
 
-export default Staticpage;
+export default () => <StaticPage />;
