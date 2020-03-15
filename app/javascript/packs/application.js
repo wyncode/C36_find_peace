@@ -8,6 +8,7 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 
+
 import ReactOnRails from "react-on-rails";
 
 import About from "../bundles/components/About";
