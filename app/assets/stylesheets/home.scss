@@ -1,3 +1,54 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+@import url("https://fonts.googleapis.com/css?family=Halant|Roboto|Montserrat|Noto+Serif|Source+Sans+Pro|Oswald|Nunito|Nunito+Sans&display=swap");
+
+#body {
+  background-image: asset-url("yoga-pose-light-orange.jpg");
+  background-repeat: none;
+  background-repeat: no-repeat;
+  background-size: cover;
+  //   height: 100%;
+  //   width: 100%;
+}
+
+#logo {
+  height: 100px;
+  width: 120px;
+}
+#slogan-words-1 {
+  font-family: Montserrat;
+  font-size: 35px;
+  text-align: left;
+  padding-left: 50px;
+  padding-top: 29%;
+  color: white;
+  margin-bottom: 10px;
+}
+#slogan-words-2 {
+  font-family: Montserrat;
+  font-size: 35px;
+  text-align: left;
+  padding-left: 50px;
+  color: white;
+  margin: 0px;
+}
+
+// #slogan-div {
+//   height: 100%;
+//   width: 50%;
+//   background-color: grey;
+//   opacity: 40%;
+// }
+
+// @media only screen and (max-width: 768px) {
+//   /* For mobile phones: */
+//   [class*="col-"] {
+//     width: 100%;
+//   }
+// }
+
+#logo {
+  width: 100px;
+}
