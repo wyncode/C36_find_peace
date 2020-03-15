@@ -9,6 +9,21 @@ require("@rails/activestorage").start()
 require("channels")
 
 
+import ReactOnRails from "react-on-rails";
+
+import About from "../bundles/components/About";
+import StaticPage from "../bundles/components/StaticPage";
+import Help from "../bundles/components/Help";
+import Map from "../bundles/Map"
+import Chat from '../bundles/Chat'
+ReactOnRails.register({
+    About,
+    StaticPage,
+    Help,
+    Map,
+    Chat
+});
+
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
 // or the `imagePath` JavaScript helper below.
