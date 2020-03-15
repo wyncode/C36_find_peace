@@ -10,5 +10,6 @@ Rails.application.routes.draw do
   get 'chatbox', to: 'chatbox#index'
   resources :organizations, only: [:index]
   resource :chat, only: [:show]
+  get 'video', to: 'video#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
