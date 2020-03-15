@@ -7,7 +7,6 @@ import FavardTristan from "../../../assets/images/FavardTristan.jpg";
 const About = () => {
   return (
     <>
-<<<<<<< HEAD:app/javascript/components/About.jsx
       <div class="teamImages">
         <div class="teamBox">
           <div id="teamImage">
@@ -23,11 +22,6 @@ const About = () => {
             it's actually a fully conscious pose aimed at being awake, yet
             completely relaxed.'
           </div>
-=======
-      <div className="teamImages">
-        <div id="teamImage">
-          <img src={SheaHannah} alt="TeamImage" id="about-image" />;
->>>>>>> master:app/javascript/bundles/components/About.jsx
         </div>
         <div class="teamBox">
           <div id="teamImage">
