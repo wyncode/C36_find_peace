@@ -47,4 +47,4 @@ const Staticpage = () => {
   );
 };
 
-export default Staticpage;
+export default () => <Staticpage />;
