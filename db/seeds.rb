@@ -20,7 +20,14 @@ vid_list = [
   ['Sun Salutation A', 'https://www.youtube.com/watch?v=oAf-oQWQghM'],
   ['Sun Salutation B', 'https://www.youtube.com/watch?v=gxS374USEb4'],
   ['Tadasana', 'https://www.youtube.com/watch?v=VBlw1oT3W7Q'],
-  ['Foot Yoga', 'https://www.youtube.com/watch?v=UVivoNX-O1U']
+  ['Foot Yoga', 'https://www.youtube.com/watch?v=UVivoNX-O1U'],
+  ['Hand Yoga', 'https://www.youtube.com/watch?v=s2TlTfROxQ0'],
+  ['Pura Vida Yoga', 'https://www.youtube.com/watch?v=cQ_Hhf7bbyE'],
+  ['Downward Facing Dog', 'https://www.youtube.com/watch?v=zQI2keizzdg'],
+  ['Tadasana', 'https://www.youtube.com/watch?v=Hid0QOEyjFo'],
+  ['Body, Mind, Breath Connection Part 1', 'https://www.youtube.com/watch?v=jjZGYu-weNI'],
+  ['Body, Mind, Breath Connection Part 2', 'https://www.youtube.com/watch?v=USoHtJwUy_A'],
+  ['Body, Mind, Breath Connection Part 3', 'https://www.youtube.com/watch?v=ASmtRoOsqKA']
 ]
 
 vid_list.each do |title, url|
