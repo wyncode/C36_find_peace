@@ -1,7 +1,51 @@
+
 <div>
     Hey this is the map page
     <%= react_component "Map"%>
 </div>
 <script>
 
+<script src='https://api.mapbox.com/mapbox-gl-js/v1.8.0/mapbox-gl.js'></script>
+<link href='https://api.mapbox.com/mapbox-gl-js/v1.8.0/mapbox-gl.css' rel='stylesheet' />
+<div id='map' style='width: 800px; height: 700px; border:1px solid black'></div>
+<script>
+    mapboxgl.accessToken = 'pk.eyJ1Ijoic3RyZW15c29uaWEiLCJhIjoiY2s3cWprMjRoMDQyYzNmbzFtbGdkMjc4cCJ9.4LDe2fqB-j4eQMROWbd6sA';
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11',
+        // Longitude and latitude for Miami, Florida
+        center: [-80.191788, 25.761861],
+        description: 'Miami, Florida',
+        zoom: 12,
+    })
+    // Adding markers or points on the map using lonagitude and latitude.
+    var marker = new mapboxgl.Marker()
+        .setLngLat([-80.191788, 25.761861])
+        .addTo(map);
+
+    // Added navigation (zoom in / zoom out) map.
+    var nav = new mapboxgl.NavigationControl();
+    map.addControl(nav, 'top-right');
+
+    // Advises the using of there loaction on the map.
+    map.addControl(new mapboxgl.GeolocateControl({
+        positionOptions: {
+            enableHighAccuracy: true
+        },
+        trackUserLocation: true
+    }));
+
+    // Shows the ratio odf a distance on a map.
+    var scale = new mapboxgl.ScaleControl({
+        maxWidth: 80,
+        unit: 'imperial'
+    });
+    map.addControl(scale);
+
+    scale.setUnit('metric');
+
+    // Gives the option of a full screen of the map. 
+    map.addControl(new mapboxgl.FullscreenControl({
+        container: document.querySelector('body')
+    }));
 </script>

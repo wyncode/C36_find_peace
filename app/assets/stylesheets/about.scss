@@ -1,3 +1,38 @@
-// Place all the styles related to the about controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+// This is all the images of the team in a row;/ This is all the images of the team in a row
+.teamImages {
+  display: flex;
+  justify-content: center;
+  padding: 10em;
+}
+
+// This is the id of each image
+#about-image {
+  height: 20%;
+
+  border-radius: 30%;
+}
+
+//This is the id of each container for each image
+#teamImage {
+  border-radius: 30%;
+  justify-content: center;
+}
+//The content below each image
+#team-content {
+  flex-shrink: 0;
+  width: 50%;
+  text-align: justify;
+  justify-content: center;
+}
+
+//A container to GitHub
+#gitHub {
+  justify-content: center;
+}
+
+// A container for each image with content inside and GitHub
+.teamBox {
+  height: 60%;
+  width: 40%;
+  justify-content: center;
+}
