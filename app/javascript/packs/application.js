@@ -8,6 +8,10 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 
+import ReactOnRails from 'react-on-rails'
+import Map from '../bundles/Map';
+
+ReactOnRails.register({ Map })
 
 import ReactOnRails from "react-on-rails";
 
