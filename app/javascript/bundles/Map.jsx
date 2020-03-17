@@ -3,6 +3,7 @@ import axios from "axios";
 import mapboxgl, {Map as MapBox, GeolocateControl, NavigationControl} from "mapbox-gl";
 import MapboxDirections from "@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions";
 import { loadPosition, geolocationOptions } from "./utils";
+require('dotenv').config()
 
 // Import Geocoder so that it can be used in the map. (import Geocoder from 'react-mapbox-gl-geocoder')
 // Import Yogamap.css so that the map can be designed porperly. (import './yogamap.css)
@@ -85,10 +86,6 @@ const Map = () => {
 
     const currentUserPositions = [longitude, latitude];
     setCurrentUserPositions(currentUserPositions);
-
-    // please hide key when you get the chance Place it on the rails side of the server. react_component
-    mapboxgl.accessToken =
-      "pk.eyJ1Ijoic3RyZW15c29uaWEiLCJhIjoiY2s3cWprMjRoMDQyYzNmbzFtbGdkMjc4cCJ9.4LDe2fqB-j4eQMROWbd6sA";
 
     const mapOptions = {
       container: "map-container",
