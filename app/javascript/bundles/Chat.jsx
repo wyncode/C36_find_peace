@@ -6,7 +6,7 @@ const INPUTS = [
   { value: "women", label: "Women" },
   { value: "shelter", label: "Shelter" },
   { value: "lgbtq", label: "LGBTQ" },
-  { value: "youth", label: "youth" }
+  { value: "youth", label: "Youth" }
 ]
 
 const Chat = () => {
