@@ -1,17 +1,73 @@
-.teamImages {
+.flex-picture-names {
+  display: flex;
+  flex-direction: row;
+  object-fit: contain;
+  justify-content: space-evenly;
+  height: auto;
+  width: auto;
+  border: red solid 10px;
+}
+
+.profile-block {
+  object-fit: contain;
+  border: red solid 10px;
+}
+
+.names {
+  text-align: center;
+  border: red solid 10px;
+}
+
+.team-images {
   display: flex;
   justify-content: center;
   padding: 5em;
+  border: red solid 10px;
 }
 
-// #teamImage {
-//   justify-content: center;
-//   height: 50px;
-//   width: 50%;
-// }
+.team-image {
+  justify-content: space-evenly;
+  height: fit-content;
+  width: fit-content;
+  background-size: cover;
+  border: red solid 10px;
+}
 
-#about-image {
-  height: 500px;
-  width: 70%;
-  border-radius: 30%;
+.about-image {
+  height: 150px;
+  width: 150px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 360%;
+  border: 3px solid black;
+  border: red solid 10px;
+}
+
+.about-pic:hover {
+  opacity: 0.7;
+  transform: scale(1.1);
+  border: red solid 10px;
+}
+
+.linkedin-logo {
+  height: 42px;
+  width: 42px;
+  padding: 3px;
+  border: red solid 10px;
+}
+.linkedin-logo:hover {
+  opacity: 0.7;
+  transform: scale(1.1);
+}
+.github-logo {
+  height: 35px;
+  width: 35px;
+  margin: 5px;
+  border-radius: 10%;
+  margin-top: 5.5px;
+  border: red solid 10px;
+}
+.github-logo:hover {
+  opacity: 0.7;
+  transform: scale(1.1);
 }
