@@ -268,7 +268,7 @@ organization_list = [
 
 
   ['Pridelines',
-  'youth',
+  'outh',
   'Provides access to safe and supportive shelter, HIV testing, educational support, emergency meal assistance, access to laundry, meals and showers.',
   '',
   '3055719601',
@@ -283,7 +283,7 @@ organization_list = [
 # //LGBTQ//
 
   ['Pridelines',
-  'youth',
+  'lgbtq',
   'Provides access to safe and supportive shelter, HIV testing, educational support, emergency meal assistance, access to laundry, meals and showers.',
   '',
   '3055719601',
@@ -292,6 +292,54 @@ organization_list = [
   '-80.187800',
   '25.834600',
   '6360 NE 4th Ct, Miami, Fl, 33138'
+],
+
+  ['Citrus Health Network',
+  'lgbtq',
+  "Provides emergency housing, AIDS/ HIV testing and treatment, mental health services, women's health services and early childhood development.",
+  '',
+  '3055712273',
+  '3058230800',
+  'http://www.citrushealth.org/#/help',
+  '-80.254170',
+  '25.820250',
+  '4125 West 20th Avenue, Hialeah, Fl, 33012'
+],
+
+['Latinos Salud',
+  'lgbtq',
+  "Provides free and confidential HIV and hepatitis C testing, case management and counseling for men.",
+  '',
+  '3053978967',
+  '',
+  'http://www.citrushealth.org/#/help',
+  '-80.132670',
+  '25.813870',
+  '925 Arthur Godfrey Road Suite 200 Miami Beach FL 33176'
+],
+
+['The Alliance for GLBTQ Youth',
+  'lgbtq',
+  "Provides care coordination services, individual and group counseling, preventative health education, homeless services for youth, family advocacy and support and youth enrichment activities for GLBTQ youth.",
+  '',
+  '3058998087',
+  '',
+  'http://new.glbtqalliance.org/',
+  '-80.175670',
+  '25.891060',
+  '925 Arthur Godfrey Road Suite 200 Miami Beach FL 33176'
+],
+
+['Care Resource',
+  'lgbtq',
+  "Provides medical care, mental health services, HIV/ STI testing and prevention, case management, transgender care, PrEP- PEPE, support groups, ",
+  '',
+  '3055761234',
+  '',
+  'http://new.glbtqalliance.org/',
+  '-80.188470',
+  '25.812760',
+  '3801 Biscayne Blvd, Miami, Fl, 33137'
 ],
 ]
 
