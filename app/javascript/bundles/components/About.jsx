@@ -1,8 +1,11 @@
-import React from "react";
-import SheaHannah from "../../../assets/images/SheaHannah.jpg";
-import StRemySonia from "../../../assets/images/StRemySonia.jpg";
-import KeranoraKrisi from "../../../assets/images/KeranoraKrisi.jpg";
-import FavardTristan from "../../../assets/images/FavardTristan.jpg";
+import React from "react"
+import "../../../assets/stylesheets/about.scss"
+import SheaHannah from "../../../assets/images/SheaHannah.jpg"
+import StRemySonia from "../../../assets/images/StRemySonia.jpg"
+import KeranoraKrisi from "../../../assets/images/KeranoraKrisi.jpg"
+import FavardTristan from "../../../assets/images/FavardTristan.jpg"
+import github from "../../../assets/images/github-logo.jpeg"
+import linkedin from "../../../assets/images/linkedin-logo.png"
 
 const About = () => {
   return (
@@ -18,7 +21,7 @@ const About = () => {
             </a>
           </div>
           <div id="team-content">
-            'My favourite yoga pose is Savasana. It might look like a nap, but
+            'My favorite yoga pose is Savasana. It might look like a nap, but
             it's actually a fully conscious pose aimed at being awake, yet
             completely relaxed.'
           </div>
@@ -33,7 +36,7 @@ const About = () => {
             </a>
           </div>
           <div id="team-content">
-            'My favourite yoga pose is Savasana. It might look like a nap, but
+            'My favorite yoga pose is Savasana. It might look like a nap, but
             it's actually a fully conscious pose aimed at being awake, yet
             completely relaxed.'
           </div>
@@ -48,7 +51,7 @@ const About = () => {
             </a>
           </div>
           <div id="team-content">
-            'My favourite yoga pose is Savasana. It might look like a nap, but
+            'My favorite yoga pose is Savasana. It might look like a nap, but
             it's actually a fully conscious pose aimed at being awake, yet
             completely relaxed.'
           </div>
@@ -63,7 +66,7 @@ const About = () => {
             </a>
           </div>
           <div id="team-content">
-            'My favourite yoga pose is Savasana. It might look like a nap, but
+            'My favorite yoga pose is Savasana. It might look like a nap, but
             it's actually a fully conscious pose aimed at being awake, yet
             completely relaxed.'
           </div>
@@ -71,7 +74,7 @@ const About = () => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default () => <About />;
+export default () => <About />
