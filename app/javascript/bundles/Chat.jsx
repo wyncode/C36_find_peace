@@ -1,60 +1,67 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import Map from './Map';
+import React, { useState } from "react";
+import axios from "axios";
+import Map from "./Map";
 
 const INPUTS = [
-  { value: 'women', label: 'Women' },
-  { value: 'shelter', label: 'Shelter' },
-  { value: 'lgbtq', label: 'LGBTQ' },
-  { value: 'youth', label: 'Youth' }
+  { value: "women", label: "Women" },
+  { value: "shelter", label: "Shelter" },
+  { value: "lgbtq", label: "LGBTQ" },
+  { value: "youth", label: "Youth" }
 ];
 
 const Chat = () => {
-  const [responses, setResponses] = useState([]);
-  const [inputs, setInputs] = useState([]);
+  const [outputs, setOutputs] = useState([]);
 
   const handleInputClick = input => {
-    setInputs([...inputs, { content: input.label, created_at: Date.now() }]);
     axios
       .get(`/organizations.json?description=${input.value}`)
       .then(({ data }) => {
-        setResponses([
-          // ...responses,
-          ...data.map(org => ({
-            content: `${org.name} - ${org.resource_description}`,
-            someOtherDisplay: `${org.address}, ${org.website}, ${org.regular_phone_number}`,
-
-            created_at: org.created_at
-          }))
-        ]);
+        const newOutputs = data.map(org => ({
+          name: `${org.name} - ${org.resource_description}`,
+          address: org.address,
+          someOtherDisplay: `${org.website}, ${org.regular_phone_number}`,
+          ...org
+        }));
+        setOutputs(newOutputs);
       });
   };
 
-  //create more sorting...//
-
-  const messages = [...responses, ...inputs].sort((a, b) =>
-    a.created_at > b.created_at ? 1 : -1
-  );
+  const handleLocationClick = ({ longitude, latitude }) => {
+    Turbolinks.visit(`/yogamap?lng=${longitude}&lat=${latitude}`);
+  };
 
   return (
-    <div className="chat-box">
-      <div className="messages">
-        {messages.map(message => {
-          if (message.hasMap) return <Map message={message} />;
+    <div className="chat-box" style={{ padding: 20 }}>
+      <div className="messages" style={{ display: "grid" }}>
+        {outputs.map(output => {
+          if (output.hasMap) return <Map output={output} />;
           return (
-            <div className="message">
-              <p>{message.content}</p>
-              <p>{message.someOtherDisplay}</p>
+            <div
+              className="output"
+              style={{
+                border: "1px solid lightblue",
+                borderRadius: 3
+              }}
+            >
+              <p>Name: {output.name}</p>
+              <a onClick={() => handleLocationClick(output)}>
+                Address: {output.address}
+              </a>
+              <p>Info: {output.someOtherDisplay}</p>
             </div>
           );
         })}
       </div>
-      <div className="inputs">
+      <div
+        className="inputs"
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-around"
+        }}
+      >
         {INPUTS.map(input => (
-          <div
-            style={{ display: 'flex', flexDirection: 'row' }}
-            className="input"
-          >
+          <div className="input">
             <button onClick={() => handleInputClick(input)}>
               {input.label}
             </button>
