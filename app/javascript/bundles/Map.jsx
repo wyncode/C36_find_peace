@@ -84,15 +84,13 @@ const Map = () => {
   const setUpMap = async () => {
     // gets the current user's location
     const position = await loadPosition();
-
     // Default longitude and latitude hardcoded for the middle of Miami , Florida.
     const { longitude = -80.191788, latitude = 25.761681 } = position.coords;
 
     const currentUserPositions = [longitude, latitude];
     setCurrentUserPositions(currentUserPositions);
 
-    mapboxgl.accessToken =
-      "pk.eyJ1Ijoic3RyZW15c29uaWEiLCJhIjoiY2s3cWprMjRoMDQyYzNmbzFtbGdkMjc4cCJ9.4LDe2fqB-j4eQMROWbd6sA";
+    mapboxgl.accessToken = process.env.REACT_APP_API_KEY;
 
     const mapOptions = {
       container: "map-container",
