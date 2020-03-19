@@ -3,75 +3,71 @@
 // // You can use Sass (SCSS) here: https://sass-lang.com/
 // @import url("https://fonts.googleapis.com/css?family=Halant|Nunito|Nunito+Sans&display=swap");
 
-@media (max-width: 768){
-    .main-navigation{
-        display: none;
-    }
+@media (max-width: 768) {
+  .main-navigation {
+    display: none;
+  }
 }
-label[for="toggle"] {
-    position: fixed;
-    top: 25px;
-    right: 25px;
-    color: black;
-    z-index: 6;
-    font-size: 3rem;
+label[for='toggle'] {
+  position: fixed;
+  top: 25px;
+  right: 25px;
+  color: black;
+  z-index: 6;
+  font-size: 3rem;
 }
 .navigation--responsive {
-    display: none;
+  display: none;
 }
 
 #toggle {
-    display: none;
-    color: white;
-    font-size: 80rem;
+  display: none;
+  color: white;
+  font-size: 80rem;
 }
 
 svg.hamburger {
-    display: block;
+  display: block;
 }
 
 .navigation--responsive {
-    display: block;
-    background: black;
-    width: 200px;
-    height: 100vh;
-    position: fixed;
-    top: -100vh;
-    right: 0;
-    bottom: 0;
-    margin: 0;
-    padding: 0;
-    transition: top 1s;
+  display: block;
+  background: rgb(17, 17, 17);
+  width: 150px;
+  height: 100vh;
+  position: fixed;
+  top: -100vh;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+  transition: top 1s;
 }
 
 .navigation--responsive ul {
-    display: block;
-    list-style: none;
-    height: 70vh;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-around;
-    margin: 85px 0 0 0;
-    padding: 0;
+  display: block;
+  list-style: none;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+  margin: 85px 0 0 0;
+  padding: 0;
 }
 
 .navigation--responsive ul li {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .navigation--responsive li a {
-    padding: 50px 20px 50px 30px;
-    text-decoration: none;
-    color: white;
-    font-family: sans-serif;
+  padding: 50px 20px 50px 30px;
+  text-decoration: none;
+  color: white;
+  font-family: sans-serif;
 }
 
 #toggle:checked ~ .navigation--responsive {
-    top: 0vh;
+  top: 0vh;
 }
-
-
-
-

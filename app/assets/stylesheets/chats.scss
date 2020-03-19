@@ -1,0 +1,77 @@
+* {
+  box-sizing: border-box;
+  margin-left: 1em;
+}
+#logo {
+  margin-top: 1em;
+}
+h3 {
+  text-align: center;
+  padding-top: 5em;
+}
+
+.categoryButton {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 18px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  background-color: #d88e40;
+  background: rgb(223, 117, 20);
+  // border: none;
+  // border-radius: 15px;
+  // box-shadow: 0 7px #999;
+  color: white;
+  border-radius: 4px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.categoryButton:hover {
+  background-color: #e62f2f;
+}
+
+.categoryButton:active {
+  background-color: #3e768e;
+  box-shadow: 0 5px #666;
+  transform: translateY(2px);
+}
+
+.chat-box {
+  margin-right: 6em;
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+}
+
+.messages {
+  margin-bottom: 10px;
+}
+
+.website {
+  cursor: pointer;
+  text-decoration: underline;
+  color: rgb(0, 0, 0);
+}
+
+a.address,
+a.info {
+  cursor: pointer;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+}
+
+a.mobile,
+a.info {
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+}
+
+// .address {
+//   visibility: visible;
+// }
+
+// .address:hover .text {
+//   visibility: visible;
+// }
