@@ -18,7 +18,27 @@ Swap it out with your actual ERD...
 
 # README
 
+# CONTRIBUTERS
+
+*   Hannah Shea
+*   Krisi Keranova
+*   Sonia St.Remy
+*   Tristan Favard
+
+# FIND PEACE
+
+Find Peace is an app that aides it's users the ability to find resources when they are at their most vulerable. This app is only known through word of mouth by the medical and mental health community to help women, kids and families that do not reside in a safe environment due to sexual, physical, mental and verbal abuse. As well as those seeking HIV testing or  treatment, emergency housing and transitional housing. It was Mahatma Ghandi that said "a nation's greatness is measured by how it treats it's weakest members." Beacuse of the stafety concerns for our client's when the app renders a dummy page will open that welcomes users to a yoga page. When our client is informed by a medical or mental health profoessional they will know that if they go to the the drop down menu and click on the help button they will enable a chat box  that will filter and ask them what type of servies they are looking for and a list of the resources will render. Once the location is selected a map that will give the client directions to that specific location. Due to safety concerns we have created a yoga video page that will render when the client's abuser maybe looking at their phone or computer.
+
+
 This is a boilerplate Rails project that uses:
+
+*   ruby -> 2.6.0 or higher
+*   Mapbox Gl with a token key
+*   Pure CSS 
+*   'react_on_rails
+*   'rails'
+*   Adobe XD
+
 
 * `ruby ~> 2.7`
 * `postgresql` as the database
@@ -65,3 +85,5 @@ This is a boilerplate Rails project that uses:
 * `git push heroku master`
 * `heroku run rails db:migrate`
 * _optional_: `heroku run rails db:seed`
+
+
