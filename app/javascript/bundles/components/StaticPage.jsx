@@ -4,7 +4,7 @@ import axios from "axios";
 
 const StaticPage = () => {
   const vidStyle = {
-    padding: "1%"
+  
   };
   // looping through video data table goes here//
 
