@@ -6,7 +6,7 @@
 
 
 # Folder contains the Api Key for Mapbox.
-/._env
+/.env
 # Ignore bundler config.
 /.bundle
 /rawvid.csv
