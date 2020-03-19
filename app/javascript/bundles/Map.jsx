@@ -7,7 +7,6 @@ import mapboxgl, {
 } from "mapbox-gl";
 import MapboxDirections from "@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions";
 import { loadPosition, geolocationOptions } from "./utils";
-require("dotenv").config();
 
 // Import Geocoder so that it can be used in the map. (import Geocoder from 'react-mapbox-gl-geocoder')
 // Import Yogamap.css so that the map can be designed porperly. (import './yogamap.css)
