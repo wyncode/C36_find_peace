@@ -14,22 +14,24 @@ const Chat = () => {
   const [outputs, setOutputs] = useState([]);
   const [showPopup, setShowPopup] = useState(false);
 
-  const togglePopup = () => {
+  const togglePopup = showPopup => {
     setShowPopup(!showPopup);
-    console.log(showPopup);
   };
-
+  const closePopup = () => {
+    console.log('we closed this!');
+    setShowPopup(false);
+  };
   const handleInputClick = input => {
     axios
       .get(`/organizations.json?description=${input.value}`)
       .then(({ data }) => {
         const newOutputs = data.map(org => ({
-          name: `${org.name} - ${org.resource_description}`,
+          name: org.name,
+          resource_description: org.resource_description,
           address: org.address,
           website: org.website,
-          mobile: org.regular_phone_number,
+          mobile: formatPhoneNumber(org.regular_phone_number),
           mobileTo: `tel:${org.regular_phone_number}`,
-          map: `/yogamap?lng=${org.longitude}&lat=${org.latitude}`,
           ...org
         }));
         setOutputs(newOutputs);
@@ -38,58 +40,24 @@ const Chat = () => {
 
   const handleLocationClick = ({ longitude, latitude }) => {
     {
-      //Turbolinks.visit(`/yogamap?lng=${longitude}&lat=${latitude}`);
+      //Turbolinks.visit(`/yogamap?lng=${longitude}&lat=${latitude}`); this code is for the Map to open on a new
 
-      togglePopup();
+      togglePopup(showPopup);
     }
+  };
+
+  const formatPhoneNumber = phoneNumberString => {
+    let cleaned = ('' + phoneNumberString).replace(/\D/g, '');
+    let match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/);
+    console.log(match);
+    if (match) {
+      return '(' + match[1] + ') ' + match[2] + '-' + match[3];
+    }
+    return null;
   };
 
   return (
     <div className="chat-box" style={{ padding: 10 }}>
-      <div className="messages" style={{ display: 'grid' }}>
-        {outputs.map(output => {
-          if (output.hasMap) return <Map output={output} />;
-          return (
-            <div
-              className="output"
-              style={{
-                border: '1px solid lightgrey',
-                borderRadius: 3
-              }}
-            >
-              <p>{output.name}</p>
-              <p>
-                <a
-                  className="address"
-                  onClick={() => handleLocationClick(output)}
-                >
-                  {output.address}
-                </a>
-              </p>
-              <p>
-                {showPopup ? (
-                  <Popup
-                    text='Click "Close Button" to hide popup'
-                    closePopup={togglePopup.bind(this)}
-                  />
-                ) : null}
-              </p>
-              <p>
-                <a className="info" href={output.website} target="_blank">
-                  {output.website}
-                </a>
-              </p>
-              <p>
-                {' '}
-                Call us:
-                <a className="mobile" href={output.mobileTo}>
-                  {output.mobile}
-                </a>
-              </p>
-            </div>
-          );
-        })}
-      </div>
       <div
         className="inputs"
         style={{
@@ -109,8 +77,56 @@ const Chat = () => {
           </div>
         ))}
       </div>
+      <div className="messages" style={{ display: 'grid' }}>
+        {outputs.map(output => {
+          if (output.hasMap) return <Map output={output} />;
+          return (
+            <div
+              className="output"
+              style={{
+                border: '1px solid lightgrey',
+                borderRadius: 3
+              }}
+            >
+              <p>{output.name}</p>
+              <p>{output.resource_description}</p>
+              <p>
+                <a
+                  className="address"
+                  onClick={() => handleLocationClick(output)}
+                >
+                  {output.address}
+                </a>
+              </p>
+
+              <div>
+                {showPopup ? (
+                  <Popup
+                    text='Click "Close Button" to hide popup'
+                    long={output.longitude}
+                    lat={output.latitude}
+                    closePopup={closePopup}
+                  />
+                ) : null}
+              </div>
+              <p>
+                <a className="info" href={output.website} target="_blank">
+                  {output.website}
+                </a>
+              </p>
+              <p>
+                {' '}
+                Call us:
+                <a className="mobile" href={output.mobileTo}>
+                  {output.mobile}
+                </a>
+              </p>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };
 
-export default () => <Chat />;
+export default props => <Chat {...props} />;
