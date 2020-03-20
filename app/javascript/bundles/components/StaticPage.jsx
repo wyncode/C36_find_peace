@@ -11,7 +11,7 @@ const StaticPage = () => {
   const vidStyle = {
   
   };
-  // looping through video data table goes here//
+  // looping through video data table goes here
 
   const [videos, setVideos] = useState([]);
 
