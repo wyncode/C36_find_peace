@@ -47,6 +47,7 @@ const Chat = () => {
   };
 
   const formatPhoneNumber = phoneNumberString => {
+    console.log('entered format phone number');
     let cleaned = ('' + phoneNumberString).replace(/\D/g, '');
     let match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/);
     console.log(match);

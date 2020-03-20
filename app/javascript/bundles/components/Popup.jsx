@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../../../assets/stylesheets/popup.scss';
+import Map from '../Map';
 
 const Popup = ({ closePopup, lat, long, text }) => {
   const mapUrl = `/yogamap?lng=${long}&lat=${lat}`;
@@ -9,7 +10,8 @@ const Popup = ({ closePopup, lat, long, text }) => {
         <p>{text}</p>
 
         <p> Map Url: {mapUrl} </p>
-        <iframe src={mapUrl} />
+        {/*<iframe src={mapUrl} />*/}
+        <Map lng={long} lat={lat} />
         <button
           onClick={() => {
             closePopup();
