@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Map from './Map';
-import Popup from './components/Popup';
+import { Modal, Button } from 'react-bootstrap';
+import '../../assets/stylesheets/modal.scss';
 
 const INPUTS = [
   { value: 'women', label: 'Women' },
@@ -10,17 +11,15 @@ const INPUTS = [
   { value: 'youth', label: 'Youth' }
 ];
 
-const Chat = () => {
+const Help = () => {
+  //state parameters of the component
   const [outputs, setOutputs] = useState([]);
-  const [showPopup, setShowPopup] = useState(false);
+  const [showModal, setModal] = useState(false);
+  const [yogaMapName, setYogaMapName] = useState('');
+  const [longitude, setLongitude] = useState('');
+  const [latitude, setLatitude] = useState('');
 
-  const togglePopup = showPopup => {
-    setShowPopup(!showPopup);
-  };
-  const closePopup = () => {
-    console.log('we closed this!');
-    setShowPopup(false);
-  };
+  //get data from api
   const handleInputClick = input => {
     axios
       .get(`/organizations.json?description=${input.value}`)
@@ -38,18 +37,21 @@ const Chat = () => {
       });
   };
 
-  const handleLocationClick = ({ longitude, latitude }) => {
+  const handleLocationClick = ({ name, longitude, latitude }) => {
     {
-      //Turbolinks.visit(`/yogamap?lng=${longitude}&lat=${latitude}`); this code is for the Map to open on a new
+      //show the modal
+      setModal(true);
 
-      togglePopup(showPopup);
+      //set the state parameters of the component
+      setYogaMapName(name);
+      setLongitude(longitude);
+      setLatitude(latitude);
     }
   };
 
   const formatPhoneNumber = phoneNumberString => {
     let cleaned = ('' + phoneNumberString).replace(/\D/g, '');
     let match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/);
-    console.log(match);
     if (match) {
       return '(' + match[1] + ') ' + match[2] + '-' + match[3];
     }
@@ -99,16 +101,6 @@ const Chat = () => {
                 </a>
               </p>
 
-              <div>
-                {showPopup ? (
-                  <Popup
-                    text='Click "Close Button" to hide popup'
-                    long={output.longitude}
-                    lat={output.latitude}
-                    closePopup={closePopup}
-                  />
-                ) : null}
-              </div>
               <p>
                 <a className="info" href={output.website} target="_blank">
                   {output.website}
@@ -125,8 +117,24 @@ const Chat = () => {
           );
         })}
       </div>
+      <div className="modal-dialog">
+        <Modal
+          className="modal-content"
+          size="lg"
+          show={showModal}
+          onHide={() => setModal(false)}
+        >
+          <Modal.Header className="modal-header" closeButton>
+            <Modal.Title className="modal-title">{yogaMapName}</Modal.Title>
+          </Modal.Header>
+
+          <Modal.Body className="modal-body">
+            <Map lng={longitude} lat={latitude} />
+          </Modal.Body>
+        </Modal>
+      </div>
     </div>
   );
 };
 
-export default props => <Chat {...props} />;
+export default props => <Help {...props} />;
