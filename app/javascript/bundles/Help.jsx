@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import Map from './Map';
 import { Modal, Button } from 'react-bootstrap';
-import Map from '../Map';
-import '../../../assets/stylesheets/modal.scss';
+import '../../assets/stylesheets/modal.scss';
 
 const INPUTS = [
   { value: 'women', label: 'Women' },
