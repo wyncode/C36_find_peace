@@ -59,76 +59,71 @@ const Help = () => {
   };
 
   return (
-    <div className="chat-box" style={{ padding: 10 }}>
-      <div
-        className="inputs"
-        style={{
-          display: 'flex',
-          flexDirection: 'row',
-          justifyContent: 'space-around'
-        }}
-      >
-        {INPUTS.map(input => (
-          <div className="input">
-            <button
-              className="categoryButton"
-              onClick={() => handleInputClick(input)}
-            >
-              {input.label}
-            </button>
-          </div>
-        ))}
-      </div>
-      <div className="messages" style={{ display: 'grid' }}>
-        {outputs.map(output => {
-          if (output.hasMap) return <Map output={output} />;
-          return (
-            <div
-              className="output"
-              style={{
-                border: '1px solid lightgrey',
-                borderRadius: 3
-              }}
-            >
-              <p>{output.name}</p>
-              <p>{output.resource_description}</p>
-              <p>
-                <a
-                  className="address"
-                  onClick={() => handleLocationClick(output)}
-                >
-                  {output.address}
-                </a>
-              </p>
-
-              <p>
-                <a className="info" href={output.website} target="_blank">
-                  {output.website}
-                </a>
-              </p>
-              <p>
-                {' '}
-                Call us:
-                <a className="mobile" href={output.mobileTo}>
-                  {output.mobile}
-                </a>
-              </p>
-            </div>
-          );
-        })}
-      </div>
-      <div className="modal-dialog">
-        <Modal
-          className="modal-content"
-          size="lg"
-          show={showModal}
-          onHide={() => setModal(false)}
+    <div className="container">
+      <div className="chat-box" style={{ padding: 10 }}>
+        <div
+          className="inputs"
+          style={{
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'space-around'
+          }}
         >
-          <Modal.Header className="modal-header" closeButton>
-            <Modal.Title className="modal-title">{yogaMapName}</Modal.Title>
+          {INPUTS.map(input => (
+            <div className="input">
+              <button
+                className="categoryButton"
+                onClick={() => handleInputClick(input)}
+              >
+                {input.label}
+              </button>
+            </div>
+          ))}
+        </div>
+
+        <div className="messages" style={{ display: 'grid' }}>
+          {outputs.map(output => {
+            if (output.hasMap) return <Map output={output} />;
+            return (
+              <div className="output">
+                <p>{output.name}</p>
+                <p>{output.resource_description}</p>
+                <p>
+                  <a
+                    className="address"
+                    onClick={() => handleLocationClick(output)}
+                  >
+                    {' '}
+                    {output.address}
+                  </a>
+                </p>
+                <p>
+                  <a className="info" href={output.website} target="_blank">
+                    {output.website}
+                  </a>
+                </p>
+                <p>
+                  {' '}
+                  Call us:
+                  <a className="mobile" href={output.mobileTo}>
+                    {output.mobile}
+                  </a>
+                </p>
+                <hr />
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Modal popup window */}
+      <div className="modal-dialog">
+        <Modal size="lg" show={showModal} onHide={() => setModal(false)}>
+          <Modal.Header closeButton>
+            <Modal.Title>{yogaMapName}</Modal.Title>
           </Modal.Header>
 
-          <Modal.Body className="modal-body">
+          <Modal.Body>
             <Map lng={longitude} lat={latitude} />
           </Modal.Body>
         </Modal>
