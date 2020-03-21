@@ -51,6 +51,6 @@ Find Peace is an app that aides it's users the ability to find resources when th
 * `heroku buildpacks:add heroku/ruby`
 * `git push heroku master`
 * `heroku run rails db:migrate`
-* _optional_: `heroku run rails db:seed`
+* _optional_: `heroku run rails db:seed'
 
 
