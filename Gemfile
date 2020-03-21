@@ -5,7 +5,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '>= 2.7'
 
-gem 'gemoji'
+# gem 'gemoji'
 
 gem 'react_on_rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

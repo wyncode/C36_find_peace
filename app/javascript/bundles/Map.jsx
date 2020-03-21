@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import mapboxgl, {
   Map as MapBox,
   GeolocateControl,
   NavigationControl
-} from "mapbox-gl";
-import MapboxDirections from "@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions";
-import { loadPosition, geolocationOptions } from "./utils";
+} from 'mapbox-gl';
+import MapboxDirections from '@mapbox/mapbox-gl-directions/dist/mapbox-gl-directions';
+import { loadPosition, geolocationOptions } from './utils';
+require('dotenv').config(); //for the .env file to work
 
 // Import Geocoder so that it can be used in the map. (import Geocoder from 'react-mapbox-gl-geocoder')
 // Import Yogamap.css so that the map can be designed porperly. (import './yogamap.css)
@@ -17,11 +18,11 @@ const Map = () => {
   const [currentUserPositions, setCurrentUserPositions] = useState([]);
   const searchParams = new URLSearchParams(location.search);
   const [destinationLng, destinationLat] = [
-    searchParams.get("lng"),
-    searchParams.get("lat")
+    searchParams.get('lng'),
+    searchParams.get('lat')
   ];
 
-  // takes an number[] of coords then calls mapbox's geolocation api to get address for those coords
+  // takes an number[] of coords then calls mapbox's geolocation api to get address for those coordinates
   const getAddressFromCoordinates = async coords => {
     const { data } = await axios.get(
       `https://api.mapbox.com/geocoding/v5/mapbox.places/${coords[0]},${coords[1]}.json?access_token=${mapboxgl.accessToken}`
@@ -43,7 +44,7 @@ const Map = () => {
     //  Adds a scale to the left hand corner of the map.
     const directionControls = new MapboxDirections({
       accessToken,
-      profile: "mapbox/driving"
+      profile: 'mapbox/driving'
     });
 
     const geolocateControls = new GeolocateControl({
@@ -55,16 +56,16 @@ const Map = () => {
 
     const scale = new mapboxgl.ScaleControl({
       maxWidth: 80,
-      unit: "imperial"
+      unit: 'imperial'
     });
 
     // Controls are added to the map.
-    map.addControl(directionControls, "top-left");
-    map.addControl(navigationControls, "top-right");
+    map.addControl(directionControls, 'top-left');
+    map.addControl(navigationControls, 'top-right');
     map.addControl(geolocateControls);
     map.addControl(scale);
 
-    map.on("load", async () => {
+    map.on('load', async () => {
       // Finds the origin and desitnation for the directionControls.
       const [origin, destination] = await Promise.all([
         getAddressFromCoordinates(currentUserPositions),
@@ -93,8 +94,8 @@ const Map = () => {
     mapboxgl.accessToken = process.env.REACT_APP_API_KEY;
 
     const mapOptions = {
-      container: "map-container",
-      style: "mapbox://styles/mapbox/streets-v11",
+      container: 'map-container',
+      style: 'mapbox://styles/mapbox/streets-v11',
       zoom: 14,
       center: currentUserPositions
     };
@@ -107,7 +108,7 @@ const Map = () => {
 
   return (
     <div
-      style={{ height: 700, width: 800, border: "1px solid black" }}
+      style={{ height: 650, width: 670, border: '1px solid black' }}
       id="map-container"
     />
   );
