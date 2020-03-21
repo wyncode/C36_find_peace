@@ -106,12 +106,7 @@ const Map = () => {
   // Component did mount.
   useEffect(() => void setUpMap(), []);
 
-  return (
-    <div
-      style={{ height: 650, width: 670, border: '1px solid black' }}
-      id="map-container"
-    />
-  );
+  return <div id="map-container" />;
 };
 
 export default () => <Map />;
