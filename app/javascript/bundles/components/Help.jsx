@@ -19,11 +19,11 @@ const Help = () => {
   const [longitude, setLongitude] = useState("");
   const [latitude, setLatitude] = useState("");
 
-  const [messagesClass, setMessagesClass] = useState('messages');
+  const [messagesClass, setMessagesClass] = useState("messages");
 
   //get data from api
   const handleInputClick = input => {
-    setMessagesClass('messages messages-white-background');
+    setMessagesClass("messages messages-white-background");
 
     axios
       .get(`/organizations.json?description=${input.value}`)
@@ -84,20 +84,14 @@ const Help = () => {
             </div>
           ))}
         </div>
-
-<<<<<<< HEAD
-        <div className="messages" style={{ display: "grid" }}>
-=======
-        <div className={messagesClass} style={{ display: 'grid' }}>
->>>>>>> 8e1dff8d526787876852f65235aa407449e6d83c
+        <div className={messagesClass} style={{ display: "grid" }}>
           {outputs.map(output => {
             if (output.hasMap) return <Map output={output} />;
             return (
               <div className="output">
-                <Button variant="danger">
-                  Warning<a href="<%= link_to / %>"></a>
-                  {}
-                </Button>
+                <a href="https://www.google.com/search?q=yoga">
+                  <Button variant="danger">Escape {}</Button>{" "}
+                </a>
                 <p>{output.name}</p>
                 <p>{output.resource_description}</p>
                 <p>
@@ -109,12 +103,7 @@ const Help = () => {
                     className="address"
                     onClick={() => handleLocationClick(output)}
                   >
-<<<<<<< HEAD
-                    {" "}
-                    {output.address}
-=======
                     show directions
->>>>>>> 8e1dff8d526787876852f65235aa407449e6d83c
                   </a>
                   ]
                 </p>
@@ -126,14 +115,9 @@ const Help = () => {
                   </a>
                 </p>
                 <p>
-<<<<<<< HEAD
                   {" "}
-                  Call us:
-=======
-                  {' '}
                   <i className="fa fa-phone"></i>
                   &nbsp;
->>>>>>> 8e1dff8d526787876852f65235aa407449e6d83c
                   <a className="mobile" href={output.mobileTo}>
                     {output.mobile}
                   </a>
