@@ -121,6 +121,9 @@ const Help = () => {
                     {output.mobile}
                   </a>
                 </p>
+                <a href="https://www.google.com/search?q=yoga">
+                  <Button variant="danger">Escape {}</Button>{' '}
+                </a>
                 <hr />
               </div>
             );
