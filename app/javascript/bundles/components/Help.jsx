@@ -1,30 +1,28 @@
-
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { Modal, Button } from "react-bootstrap";
 import Map from "../Map";
 import Emoji from "emoji-regex";
-
 const INPUTS = [
-  { value: 'women', label: 'Women', emoji: '👩🏽', emojiLabel: 'woman' },
-  { value: 'shelter', label: 'Shelter', emoji: '🛏️', emojiLabel: 'bed' },
-  { value: 'lgbtq', label: 'LGBTQ', emoji: '🌈', emojiLabel: 'rainbow' },
-  { value: 'youth', label: 'Youth', emoji: '👦🏻', emojiLabel: 'boy' }
+  { value: "women", label: "Women" },
+  { value: "shelter", label: "Shelter" },
+  { value: "lgbtq", label: "LGBTQ" },
+  { value: "youth", label: "Youth" }
 ];
 
 const Help = () => {
   //state parameters of the component
   const [outputs, setOutputs] = useState([]);
   const [showModal, setModal] = useState(false);
-  const [yogaMapName, setYogaMapName] = useState('');
-  const [longitude, setLongitude] = useState('');
-  const [latitude, setLatitude] = useState('');
+  const [yogaMapName, setYogaMapName] = useState("");
+  const [longitude, setLongitude] = useState("");
+  const [latitude, setLatitude] = useState("");
 
-  const [messagesClass, setMessagesClass] = useState('messages');
+  const [messagesClass, setMessagesClass] = useState("messages");
 
   //get data from api
   const handleInputClick = input => {
-    setMessagesClass('messages messages-white-background');
+    setMessagesClass("messages messages-white-background");
 
     axios
       .get(`/organizations.json?description=${input.value}`)
@@ -55,10 +53,10 @@ const Help = () => {
   };
 
   const formatPhoneNumber = phoneNumberString => {
-    let cleaned = ('' + phoneNumberString).replace(/\D/g, '');
+    let cleaned = ("" + phoneNumberString).replace(/\D/g, "");
     let match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/);
     if (match) {
-      return '(' + match[1] + ') ' + match[2] + '-' + match[3];
+      return "(" + match[1] + ") " + match[2] + "-" + match[3];
     }
     return null;
   };
@@ -69,9 +67,9 @@ const Help = () => {
         <div
           className="inputs"
           style={{
-            display: 'flex',
-            flexDirection: 'row',
-            justifyContent: 'space-around'
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-around"
           }}
         >
           {INPUTS.map(input => (
@@ -80,18 +78,19 @@ const Help = () => {
                 className="categoryButton"
                 onClick={() => handleInputClick(input)}
               >
-                <Emoji symbol={input.emoji} label={input.EmojiLabel} />
-                &nbsp;
                 {input.label}
               </button>
             </div>
           ))}
         </div>
-        <div className={messagesClass} style={{ display: 'grid' }}>
+        <div className={messagesClass} style={{ display: "grid" }}>
           {outputs.map(output => {
             if (output.hasMap) return <Map output={output} />;
             return (
               <div className="output">
+                <a href="https://www.google.com/search?q=yoga">
+                  <Button variant="danger">Escape {}</Button>{" "}
+                </a>
                 <p>{output.name}</p>
                 <p>{output.resource_description}</p>
                 <p>
@@ -115,7 +114,7 @@ const Help = () => {
                   </a>
                 </p>
                 <p>
-                  {' '}
+                  {" "}
                   <i className="fa fa-phone"></i>
                   &nbsp;
                   <a className="mobile" href={output.mobileTo}>
