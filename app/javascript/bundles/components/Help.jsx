@@ -115,6 +115,9 @@ const Help = () => {
           })}
         </div>
       </div>
+      {/* $("#myModal").draggable({
+    handle: ".modal-header"
+});  */}
 
       {/* Modal popup window */}
       <div className="modal-dialog">
