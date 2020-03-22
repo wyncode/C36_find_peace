@@ -19,8 +19,12 @@ const Help = () => {
   const [longitude, setLongitude] = useState('');
   const [latitude, setLatitude] = useState('');
 
+  const [messagesClass, setMessagesClass] = useState('messages');
+
   //get data from api
   const handleInputClick = input => {
+    setMessagesClass('messages messages-white-background');
+
     axios
       .get(`/organizations.json?description=${input.value}`)
       .then(({ data }) => {
@@ -81,7 +85,7 @@ const Help = () => {
           ))}
         </div>
 
-        <div className="messages" style={{ display: 'grid' }}>
+        <div className={messagesClass} style={{ display: 'grid' }}>
           {outputs.map(output => {
             if (output.hasMap) return <Map output={output} />;
             return (
@@ -89,22 +93,29 @@ const Help = () => {
                 <p>{output.name}</p>
                 <p>{output.resource_description}</p>
                 <p>
+                  <i className="fa fa-location-arrow"></i>
+                  &nbsp;
+                  {output.address}
+                  &nbsp; [
                   <a
                     className="address"
                     onClick={() => handleLocationClick(output)}
                   >
-                    {' '}
-                    {output.address}
+                    show directions
                   </a>
+                  ]
                 </p>
                 <p>
+                  <i className="fas fa-link"></i>
+                  &nbsp;
                   <a className="info" href={output.website} target="_blank">
                     {output.website}
                   </a>
                 </p>
                 <p>
                   {' '}
-                  Call us:
+                  <i className="fa fa-phone"></i>
+                  &nbsp;
                   <a className="mobile" href={output.mobileTo}>
                     {output.mobile}
                   </a>
@@ -115,11 +126,7 @@ const Help = () => {
           })}
         </div>
       </div>
-      {/* $("#myModal").draggable({
-    handle: ".modal-header"
-});  */}
 
-      {/* Modal popup window */}
       <div className="modal-dialog">
         <Modal size="lg" show={showModal} onHide={() => setModal(false)}>
           <Modal.Header closeButton>
