@@ -1,15 +1,24 @@
-import React from "react";
-import "../../../assets/stylesheets/about.scss";
-import SheaHannah from "../../../assets/images/SheaHannah.jpg";
-import StRemySonia from "../../../assets/images/StRemySonia.jpg";
-import KeranoraKrisi from "../../../assets/images/KeranoraKrisi.jpg";
-import FavardTristan from "../../../assets/images/FavardTristan.jpg";
-import github from "../../../assets/images/github.jpeg";
-import linkedin from "../../../assets/images/linkedin.png";
+import React from "react"
+// import "../../../assets/stylesheets/about.scss"
+import SheaHannah from "../../../assets/images/SheaHannah.jpg"
+import StRemySonia from "../../../assets/images/StRemySonia.jpg"
+import KeranoraKrisi from "../../../assets/images/KeranoraKrisi.jpg"
+import FavardTristan from "../../../assets/images/FavardTristan.jpg"
+import github from "../../../assets/images/github.jpeg"
+import linkedin from "../../../assets/images/linkedin.png"
+import about from "../../../assets/images/about-us-banner-plain.png"
 
 const About = () => {
   return (
     <>
+      {/* <div className="banner"></div> */}
+      <img src={about} alt="about" className="about-us-banner" />
+
+      <div>
+        <p className="about-quote">
+          "Here is an emotional quote about peace and blah blah blah...."
+        </p>
+      </div>
       <div className="flex-picture-names">
         <div className="profile-block">
           <p className="names">Hannah Shea</p>
@@ -72,7 +81,13 @@ const About = () => {
           </div>
         </div>
       </div>
+      <div>
+        <p className="blurb">
+          We made this website because we love yoga - so much. Downard dog, all
+          the things.
+        </p>
+      </div>
     </>
-  );
-};
-export default () => <About />;
+  )
+}
+export default () => <About />
