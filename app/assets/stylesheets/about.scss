@@ -1,36 +1,59 @@
+// .the-team {
+//   padding-top: 15px;
+//   font-family: montserrat;
+//   font-size: 50px;
+//   padding-left: 2%;
+//   color: #084177;
+// }
+
+@import url("https://fonts.googleapis.com/css?family=Halant|Open+Sans+Condensed:300|Bellota|Pacifico|Roboto|Montserrat|Noto+Serif|Source+Sans+Pro|Oswald|Nunito|Nunito+Sans&display=swap");
+
+.banner {
+  padding-top: 130px;
+}
+
+.about-us-banner {
+  object-fit: cover;
+  // background-image: url(../images/about-us-banner-pics.png);
+  height: 300px;
+  background-size: cover;
+  width: 100%;
+  // width: fit-content;
+}
+
+.about-quote {
+  text-align: center;
+  font-family: bellota;
+  font-size: 40px;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
 .flex-picture-names {
+  font-family: Arial, Helvetica, sans-serif;
   display: flex;
   flex-direction: row;
   object-fit: contain;
   justify-content: space-evenly;
   height: auto;
   width: auto;
-  border: red solid 10px;
+  // border: red solid 10px;
+  padding-top: 0%;
+}
+
+.inner-flex {
+  text-align: center;
 }
 
 .profile-block {
   object-fit: contain;
-  border: red solid 10px;
+  // border: red solid 10px;
 }
 
 .names {
   text-align: center;
-  border: red solid 10px;
-}
-
-.team-images {
-  display: flex;
-  justify-content: center;
-  padding: 5em;
-  border: red solid 10px;
-}
-
-.team-image {
-  justify-content: space-evenly;
-  height: fit-content;
-  width: fit-content;
-  background-size: cover;
-  border: red solid 10px;
+  font-size: 22px;
+  // border: red solid 10px;
 }
 
 .about-image {
@@ -39,21 +62,22 @@
   object-fit: cover;
   object-position: top;
   border-radius: 360%;
-  border: 3px solid black;
-  border: red solid 10px;
+  border: 3px solid grey;
+  // border: red solid 10px;
 }
 
-.about-pic:hover {
+.about-image:hover {
   opacity: 0.7;
   transform: scale(1.1);
-  border: red solid 10px;
+  // border: red solid 10px;
 }
 
 .linkedin-logo {
-  height: 42px;
-  width: 42px;
+  height: 36.5px;
+  width: 37px;
   padding: 3px;
-  border: red solid 10px;
+  padding-top: 10px;
+  // border: red solid 10px;
 }
 .linkedin-logo:hover {
   opacity: 0.7;
@@ -65,48 +89,18 @@
   margin: 5px;
   border-radius: 10%;
   margin-top: 5.5px;
-  border: red solid 10px;
+  // border: red solid 10px;
 }
 .github-logo:hover {
   opacity: 0.7;
-  transform: scale(1.1);
+  transform: scale(1.15);
 }
 
-// This is all the images of the team in a row;/ This is all the images of the team in a row
-.teamImages {
-  display: flex;
-  justify-content: center;
-  padding: 10em;
-}
-
-// This is the id of each image
-#about-image {
-  height: 20%;
-
-  border-radius: 30%;
-}
-
-//This is the id of each container for each image
-#teamImage {
-  border-radius: 30%;
-  justify-content: center;
-}
-//The content below each image
-#team-content {
-  flex-shrink: 0;
-  width: 50%;
-  text-align: justify;
-  justify-content: center;
-}
-
-//A container to GitHub
-#gitHub {
-  justify-content: center;
-}
-
-// A container for each image with content inside and GitHub
-.teamBox {
-  height: 60%;
-  width: 40%;
-  justify-content: center;
+.blurb {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  padding-top: 25px;
+  padding-left: 25px;
+  padding-right: 25px;
 }
