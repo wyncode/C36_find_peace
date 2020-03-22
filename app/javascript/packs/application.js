@@ -3,24 +3,24 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 
-require("@rails/ujs").start();
-require("turbolinks").start();
-require("@rails/activestorage").start();
-require("channels");
+require('@rails/ujs').start();
+require('turbolinks').start();
+require('@rails/activestorage').start();
+require('channels');
 
-import ReactOnRails from "react-on-rails";
+import ReactOnRails from 'react-on-rails';
 
-import About from "../bundles/components/About";
-import StaticPage from "../bundles/components/StaticPage";
-import Help from "../bundles/components/Help";
-import Map from "../bundles/Map";
-import Chat from "../bundles/Chat";
+import About from '../bundles/components/About';
+import StaticPage from '../bundles/components/StaticPage';
+import Help from '../bundles/components/Help';
+import Map from '../bundles/Map';
+//import Chat from "../bundles/Chat";
 ReactOnRails.register({
   About,
   StaticPage,
   Help,
-  Map,
-  Chat
+  Map
+  // Chat
 });
 
 // Uncomment to copy all static images under ../images to the output folder and reference

@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   get 'nav', to: 'nav#index'
   get 'staticpage', to: 'staticpage#index'
   get 'yogamap', to: 'yogamap#index'
-  get 'chatbox', to: 'chatbox#index'
   resources :organizations, only: [:index]
   resource :chat, only: [:show]
   get 'video', to: 'video#index'

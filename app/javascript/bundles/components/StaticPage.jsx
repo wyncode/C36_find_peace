@@ -8,7 +8,9 @@ href='css/medium.css' />
 
 
 const StaticPage = () => {
-  const vidStyle = {
+  const vidStyle = {display:"block",
+    marginLeft: "auto",
+    marginRight: "auto"
   
   };
   // looping through video data table goes here
@@ -30,14 +32,15 @@ const StaticPage = () => {
       });
   };
   return (
-    <div className= "body">
+    <div>
       <h1>Find Peace Yoga</h1>
         {videos.map(videos => {
           return (
             <div key={videos.id} className=" pure-g pure-u-1-3 .pure-u-lg- pure-u " id="parent">
+
                 <div className="sub-title"><h5>{videos.title}</h5></div>
-                    <div className= "videos" id= "rows"></div>
-                          <ReactPlayer url={videos.url} light controls width="90%"style={vidStyle}/>
+                    <div className= "videos"></div>
+                          <ReactPlayer url={videos.url} light controls style={vidStyle}/>
             </div>
           );
         })}
