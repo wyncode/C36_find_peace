@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import { Modal, Button } from 'react-bootstrap';
-import Emoji from 'a11y-react-emoji';
-import Map from '../Map';
-import '../../../assets/stylesheets/modal.scss';
+
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { Modal, Button } from "react-bootstrap";
+import Map from "../Map";
+import Emoji from "emoji-regex";
 
 const INPUTS = [
   { value: 'women', label: 'Women', emoji: '👩🏽', emojiLabel: 'woman' },
@@ -132,13 +132,14 @@ const Help = () => {
         </div>
       </div>
 
-      <div className="modal-dialog">
+      <div>
         <Modal size="lg" show={showModal} onHide={() => setModal(false)}>
           <Modal.Header closeButton>
             <Modal.Title>{yogaMapName}</Modal.Title>
           </Modal.Header>
-
           <Modal.Body>
+            <p>handleLocationClick</p>
+
             <Map lng={longitude} lat={latitude} />
           </Modal.Body>
         </Modal>
