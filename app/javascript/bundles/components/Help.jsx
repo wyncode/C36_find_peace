@@ -3,7 +3,7 @@ import axios from "axios";
 import { Modal, Button } from "react-bootstrap";
 import Map from "../Map";
 import "../../../assets/stylesheets/modal.scss";
-
+import Emoji from "emoji-regex";
 const INPUTS = [
   { value: "women", label: "Women" },
   { value: "shelter", label: "Shelter" },
@@ -59,74 +59,14 @@ const Help = () => {
   };
 
   return (
-<<<<<<< HEAD
-    <div className="chat-box" style={{ padding: 10 }}>
-      <div>
-        <Button className="warning">Warning</Button>
-      </div>
-      <div
-        className="inputs"
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "space-around"
-        }}
-      >
-        {INPUTS.map(input => (
-          <div className="input">
-            <button
-              className="categoryButton"
-              onClick={() => handleInputClick(input)}
-            >
-              {input.label}
-            </button>
-          </div>
-        ))}
-      </div>
-      <div className="messages" style={{ display: "grid" }}>
-        {outputs.map(output => {
-          if (output.hasMap) return <Map output={output} />;
-          return (
-            <div
-              className="output"
-              style={{
-                border: "1px solid lightgrey",
-                borderRadius: 3
-              }}
-            >
-              <p>{output.name}</p>
-              <p>{output.resource_description}</p>
-              <p>
-                <a
-                  className="address"
-                  onClick={() => handleLocationClick(output)}
-                >
-                  {output.address}
-                </a>
-              </p>
-
-              <p>
-                <a className="info" href={output.website} target="_blank">
-                  {output.website}
-                </a>
-              </p>
-              <p>
-                {" "}
-                Call us:
-                <a className="mobile" href={output.mobileTo}>
-                  {output.mobile}
-                </a>
-              </p>
-              <div>get</div>
-=======
     <div className="container">
       <div className="chat-box" style={{ padding: 10 }}>
         <div
           className="inputs"
           style={{
-            display: 'flex',
-            flexDirection: 'row',
-            justifyContent: 'space-around'
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-around"
           }}
         >
           {INPUTS.map(input => (
@@ -137,16 +77,19 @@ const Help = () => {
               >
                 {input.label}
               </button>
->>>>>>> dccc25dbfd7fdb811fa5286cd67e1704b9b5f0e7
             </div>
           ))}
         </div>
 
-        <div className="messages" style={{ display: 'grid' }}>
+        <div className="messages" style={{ display: "grid" }}>
           {outputs.map(output => {
             if (output.hasMap) return <Map output={output} />;
             return (
               <div className="output">
+                <Button variant="danger">
+                  Warning<a href="<%= link_to / %>"></a>
+                  {}
+                </Button>
                 <p>{output.name}</p>
                 <p>{output.resource_description}</p>
                 <p>
@@ -154,7 +97,7 @@ const Help = () => {
                     className="address"
                     onClick={() => handleLocationClick(output)}
                   >
-                    {' '}
+                    {" "}
                     {output.address}
                   </a>
                 </p>
@@ -164,7 +107,7 @@ const Help = () => {
                   </a>
                 </p>
                 <p>
-                  {' '}
+                  {" "}
                   Call us:
                   <a className="mobile" href={output.mobileTo}>
                     {output.mobile}
