@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Modal, Button } from "react-bootstrap";
 import Map from "../Map";
-import "../../../assets/stylesheets/modal.scss";
 import Emoji from "emoji-regex";
 const INPUTS = [
   { value: "women", label: "Women" },
@@ -129,13 +128,14 @@ const Help = () => {
         </div>
       </div>
 
-      <div className="modal-dialog">
+      <div>
         <Modal size="lg" show={showModal} onHide={() => setModal(false)}>
           <Modal.Header closeButton>
             <Modal.Title>{yogaMapName}</Modal.Title>
           </Modal.Header>
-
           <Modal.Body>
+            <p>handleLocationClick</p>
+
             <Map lng={longitude} lat={latitude} />
           </Modal.Body>
         </Modal>
