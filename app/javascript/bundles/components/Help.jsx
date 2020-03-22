@@ -92,9 +92,6 @@ const Help = () => {
             if (output.hasMap) return <Map output={output} />;
             return (
               <div className="output">
-                <a href="https://www.google.com/search?q=yoga">
-                  <Button variant="danger">Escape {}</Button>{' '}
-                </a>
                 <p>{output.name}</p>
                 <p>{output.resource_description}</p>
                 <p>
@@ -125,6 +122,9 @@ const Help = () => {
                     {output.mobile}
                   </a>
                 </p>
+                <a href="https://www.google.com/search?q=yoga">
+                  <Button variant="danger">Escape {}</Button>{' '}
+                </a>
                 <hr />
               </div>
             );
