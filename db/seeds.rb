@@ -245,7 +245,7 @@ organization_list = [
   'youth',
   'Provides services for child welfare, foster care, adoption, mentoring case management and stability workshops.',
   '',
-  '3047556500',
+  '304756500',
   '',
   'https://www.chsfl.org',
   '-80.208990',
