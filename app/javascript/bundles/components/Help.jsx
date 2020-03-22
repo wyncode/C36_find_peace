@@ -138,8 +138,6 @@ const Help = () => {
             <Modal.Title>{yogaMapName}</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <p>handleLocationClick</p>
-
             <Map lng={longitude} lat={latitude} />
           </Modal.Body>
         </Modal>
