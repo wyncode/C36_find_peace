@@ -13,7 +13,7 @@ const StaticPage = () => {
     marginRight: "auto"
   
   };
-  // looping through video data table goes here//
+  // looping through video data table goes here
 
   const [videos, setVideos] = useState([]);
 
@@ -36,7 +36,8 @@ const StaticPage = () => {
       <h1>Find Peace Yoga</h1>
         {videos.map(videos => {
           return (
-            <div className= "container" key={videos.id}>
+            <div key={videos.id} className=" pure-g pure-u-1-3 .pure-u-lg- pure-u " id="parent">
+
                 <div className="sub-title"><h5>{videos.title}</h5></div>
                     <div className= "videos"></div>
                           <ReactPlayer url={videos.url} light controls style={vidStyle}/>
