@@ -9,7 +9,6 @@ Statistics show that victims of domestic violence are at their most vulnerable w
 When a medical or mental health professional informs a user in need about this website, the user will learn that if they go to the the drop down menu and click on the 'help' button they will enable a chat-box. The chat-box will present them with several options for them to choose which best describes their current needs. When the user clicks on their choice, a list of resources as well as websites, phone numbers and locations will render. Once the location is selected, the user is presented with a map that gives them directions to that specific location. It was Mahatma Gandhi that said "a nation's greatness is measured by how it treats it's weakest members."
  
 
-
 # CONTRIBUTERS
 
 * [Hannah Shea](https://github.com/hbshea)
@@ -40,3 +39,7 @@ When a medical or mental health professional informs a user in need about this w
 * `heroku run rails db:migrate`
 * _optional_: `heroku run rails db:seed`
 * `rails db: create db:migrate db:seed`
+
+## ERD
+
+* ![ERD](app/assets/images/erd.png)
