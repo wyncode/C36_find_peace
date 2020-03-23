@@ -16,7 +16,9 @@ const About = () => {
 
       <div>
         <p className="about-quote">
-          "Here is an emotional quote about peace and blah blah blah...."
+          "It doesn't take a lot of strength to hang on. It takes a lot of
+          strength to let go."
+          <p>-J.C. Watts</p>
         </p>
       </div>
       <div className="flex-picture-names">
@@ -80,12 +82,6 @@ const About = () => {
             </a>
           </div>
         </div>
-      </div>
-      <div>
-        <p className="blurb">
-          We made this website because we love yoga - so much. Downard dog, all
-          the things.
-        </p>
       </div>
     </>
   )
