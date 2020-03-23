@@ -3,6 +3,7 @@
 #bg-help {
   background-color: white;
 }
+
 #hr-help {
   color: black;
 }
@@ -16,6 +17,7 @@
   position: absolute;
   z-index: -1
 }
+
 h3 {
   // background-color: white;
   text-align: center;
@@ -24,6 +26,7 @@ h3 {
   font-size: 20px;
   font-family: Arial, Helvetica, sans-serif;
 }
+
 #help-description {
   text-align: center;
   padding-top: 5px;
@@ -38,6 +41,7 @@ h3 {
   height: 100px;
   width: max-content;
 }
+
 .categoryButton {
   box-sizing: border-box;
   display: inline-block;
@@ -54,15 +58,18 @@ h3 {
   border-radius: 8px;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 }
+
 .categoryButton:hover {
   transform: scale(1.07);
   transition-duration: 0.08s;
 }
+
 .categoryButton:active {
   box-shadow: 0 5px;
   outline: none;
   transform: translateY(2px);
 }
+
 .chat-box {
   margin-right: 8em;
   margin-bottom: 1em;
@@ -75,6 +82,7 @@ h3 {
 .output {
   margin-top: 30px;
 }
+
 // this is so that the white space behind message renders at the same time as message and not before
 .messages-white-background {
   margin-top: 330px;
@@ -87,73 +95,89 @@ h3 {
   margin-top: 2px;
   margin-bottom: 2px;
 }
+
 .website {
   cursor: pointer;
   text-decoration: none;
   color: rgb(0, 0, 0);
   cursor: pointer;
 }
+
 .website:hover {
   color: #8ccd63;
   cursor: pointer;
 }
+
 .website:visited {
   color: black;
 }
+
 .address--active {
   color: #000000;
   border-top: 4px solid #639ccd;
   font-weight: 700;
 }
+
 a.address {
   cursor: pointer;
   text-decoration: underline;
   color: rgb(0, 0, 0);
   margin-left: 0;
 }
+
 a.mobile {
   cursor: pointer;
   text-decoration: none;
   color: black;
 }
+
 .address:hover {
   color: #639ccd;
 }
+
 .address--active {
   color: #639ccd;
   border-top: 4px solid #639ccd;
   font-weight: 700;
   margin-left: 0;
 }
+
 a:-webkit-any-link:hover {
   color: #639ccd;
 }
+
 a:-webkit-any-link--active {
   color: #639ccd;
   border-top: 4px solid #639ccd;
   font-weight: 700;
   margin-left: 0;
 }
+
 a:-webkit-any-link {
   text-decoration: none;
   color: inherit;
   margin-left: 0;
 }
+
 .mobile:hover {
   color: #639ccd;
 }
+
 .mobile--active {
   color: #639ccd;
   border-top: 4px solid #639ccd;
   font-weight: 700;
 }
+
 p:nth-child(1) {
   color: black;
   font-weight: bold;
 }
+
 hr {
   margin: 40px 40px;
 }
+
 .inputs {
   position: -webkit-sticky;
   position: sticky;
@@ -175,3 +199,4 @@ hr {
   padding-right: 2em;
   margin-bottom: 15px;
 
+}
