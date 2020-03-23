@@ -2,10 +2,10 @@
 // // They will automatically be included in application.css.
 // // You can use Sass (SCSS) here: https://sass-lang.com/
 
-@import url("https://fonts.googleapis.com/css?family=Halant|Pacifico|Roboto|Montserrat|Noto+Serif|Source+Sans+Pro|Oswald|Nunito|Nunito+Sans&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Halant|Pacifico|Roboto|Montserrat|Noto+Serif|Source+Sans+Pro|Oswald|Nunito|Nunito+Sans&display=swap');
 
 #body {
-  background-image: asset-url("yoga-pose-light-orange.jpg");
+  background-image: asset-url('yoga-pose-light-orange.jpg');
   background-repeat: none;
   background-repeat: no-repeat;
   background-size: cover;
@@ -19,6 +19,17 @@
 }
 
 
+
+#logo {
+  height: 100px;
+  width: 130px;
+  padding-top: 15px;
+}
+
+#logo {
+  width: 6.25em;
+}
+
 #logo:hover {
   transform: scale(1.08);
 }
@@ -29,7 +40,7 @@
   padding-top: 30%;
   color: white;
   font-family: arial;
-  font-size: 100px;
+  font-size: 80px;
   letter-spacing: 18px;
   margin: 0px;
 }
@@ -52,16 +63,37 @@
   font-size: 20px;
   text-align: center;
   color: white;
-  // margin-top: 2px;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 600px) {
   /* For mobile phones: */
-  [class*="col-"] {
+  [id*='slogan-'] {
     width: 100%;
   }
+}
 
-  #logo {
+@media screen and (min-width: 561px) {
+  p#slogan-words-1 {
+    font-size: 80px;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  p#slogan-words-1 {
+    font-size: 30px;
+  }
+}
+
+@media screen and (min-width: 561px) {
+  img#logo {
     width: 100px;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  img#logo {
+    width: 60px;
+    height: 60px;
+    margin: 1em;
   }
 }
