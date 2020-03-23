@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import ReactPlayer from "react-player";
 import axios from "axios";
+import about from "../../../assets/images/find-peace-yoga.png"
 
 const StaticPage = () => {
   const vidStyle = {display:"block",
@@ -28,9 +29,9 @@ const StaticPage = () => {
       });
   };
   return (
-    <div>
-      <h1>Find Peace Yoga</h1>
-      <div >
+  <div id="master-div">
+    <div className="static-page-banner"> <img src={about} alt="static-page" className="static-page-banner" /></div>
+      <div>
         {videos.map(videos => {
           return (
             <div className= "container" key={videos.id}>
@@ -42,6 +43,7 @@ const StaticPage = () => {
         })}
       </div>
     </div>
+  
   );
 };
 
