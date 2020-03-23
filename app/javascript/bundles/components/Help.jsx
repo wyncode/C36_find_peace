@@ -1,10 +1,8 @@
 
-
-import React, { useState } from "react";
-import axios from "axios";
-import { Modal, Button } from "react-bootstrap";
-import Map from "../Map";
-import Emoji from "emoji-regex";
+import React, { useState } from "react"
+import axios from "axios"
+import { Modal, Button } from "react-bootstrap"
+import Map from "../Map"
 
 const INPUTS = [
   { value: "women", label: "Women" },
@@ -22,11 +20,9 @@ const Help = () => {
   const [latitude, setLatitude] = useState("")
 
   const [messagesClass, setMessagesClass] = useState("messages")
-
   //get data from api
   const handleInputClick = input => {
     setMessagesClass("messages messages-white-background")
-
 
     axios
       .get(`/organizations.json?description=${input.value}`)
@@ -55,7 +51,6 @@ const Help = () => {
       setLatitude(latitude)
     }
   }
-
   const formatPhoneNumber = phoneNumberString => {
 
     let cleaned = ("" + phoneNumberString).replace(/\D/g, "")
@@ -91,7 +86,7 @@ const Help = () => {
         </div>
         <div className={messagesClass} style={{ display: 'grid' }}>
           {outputs.map(output => {
-            if (output.hasMap) return <Map output={output} />;
+            if (output.hasMap) return <Map output={output} />
             return (
               <div className="output">
                 <p>{output.name}</p>
@@ -125,56 +120,13 @@ const Help = () => {
                   </a>
                 </p>
                 <a href="https://www.google.com/search?q=yoga">
-                  <Button variant="danger">Escape {}</Button>{' '}
+                  <Button variant="danger">Escape {}</Button>{" "}
                 </a>
-                <hr />
               </div>
-            ))}
-          </div>
-          <div className={messagesClass} style={{ display: "grid" }}>
-            {outputs.map(output => {
-              if (output.hasMap) return <Map output={output} />
-              return (
-                <div className="output">
-                  <a href="https://www.google.com/search?q=yoga">
-                    <Button variant="danger">Escape {}</Button>{" "}
-                  </a>
-                  <p>{output.name}</p>
-                  <p>{output.resource_description}</p>
-                  <p>
-                    <i className="fa fa-location-arrow"></i>
-                    &nbsp;
-                    {output.address}
-                    &nbsp; [
-                    <a
-                      className="address"
-                      onClick={() => handleLocationClick(output)}
-                    >
-                      show directions
-                    </a>
-                    ]
-                  </p>
-                  <p>
-                    <i className="fas fa-link"></i>
-                    &nbsp;
-                    <a className="info" href={output.website} target="_blank">
-                      {output.website}
-                    </a>
-                  </p>
-                  <p>
-                    <i className="fa fa-phone"></i>
-                    &nbsp;
-                    <a className="mobile" href={output.mobileTo}>
-                      {output.mobile}
-                    </a>
-                  </p>
-                </div>
-              )
-            })}
-          </div>
+            )
+          })}
         </div>
       </div>
-
       <div>
         <Modal size="lg" show={showModal} onHide={() => setModal(false)}>
           <Modal.Header closeButton>

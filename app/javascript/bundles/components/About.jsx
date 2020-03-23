@@ -7,13 +7,11 @@ import FavardTristan from "../../../assets/images/FavardTristan.jpg"
 import github from "../../../assets/images/github.jpeg"
 import linkedin from "../../../assets/images/linkedin.png"
 import about from "../../../assets/images/about-us-banner-plain.png"
-
 const About = () => {
   return (
     <>
       {/* <div className="banner"></div> */}
       <img src={about} alt="about" className="about-us-banner" />
-
       <div>
         <p className="about-quote">
           "It doesn't take a lot of strength to hang on. It takes a lot of
