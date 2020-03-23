@@ -13,56 +13,62 @@
   background-attachment: fixed;
 
 
-#logo {
-  height: 100px;
-  width: 130px;
-  padding-top: 15px;
-}
-
-#logo {
-  width: 6.25em;
-
-}
-#logo:hover {
-  transform: scale(1.08);
-}
-#slogan-words-1 {
-  grid-row: auto;
-  text-align: center;
-  padding-top: 30%;
-  color: white;
-  font-family: arial;
-  font-size: 80px;
-  letter-spacing: 18px;
-  margin: 0px;
-}
-#pt2-slogan {
-  text-align: center;
-  margin-bottom: 0px;
-}
-#slogan-words-2 {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 20px;
-  text-align: center;
-  color: white;
-  margin-bottom: 10px;
-}
-#slogan-words-3 {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 20px;
-  text-align: center;
-  color: white;
-}
-
-@media only screen and (max-width: 768px) {
-
-  /* For mobile phones: */
-  [id*='slogan-'] {
-    width: 100%;
+  #logo {
+    height: 100px;
+    width: 130px;
+    padding-top: 15px;
   }
 
   #logo {
-    width: 100px;
-  }
-}
+    width: 6.25em;
 
+  }
+
+  #logo:hover {
+    transform: scale(1.08);
+  }
+
+  #slogan-words-1 {
+    grid-row: auto;
+    text-align: center;
+    padding-top: 30%;
+    color: white;
+    font-family: arial;
+    font-size: 80px;
+    letter-spacing: 18px;
+    margin: 0px;
+  }
+
+  #pt2-slogan {
+    text-align: center;
+    margin-bottom: 0px;
+  }
+
+  #slogan-words-2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    text-align: center;
+    color: white;
+    margin-bottom: 10px;
+  }
+
+  #slogan-words-3 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    text-align: center;
+    color: white;
+  }
+
+  @media only screen and (max-width: 768px) {
+
+    /* For mobile phones: */
+    [id*='slogan-'] {
+      width: 100%;
+    }
+
+    #logo {
+      width: 100px;
+    }
+  }
+
+}
