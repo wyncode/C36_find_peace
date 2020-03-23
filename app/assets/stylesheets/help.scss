@@ -1,10 +1,13 @@
 @import url("https://fonts.googleapis.com/css?family=Halant|Inter|Open+Sans|Pacifico|Roboto|Montserrat|Noto+Serif|Source+Sans+Pro|Oswald|Nunito|Nunito+Sans&display=swap");
+
 #bg-help {
   background-color: white;
 }
 #hr-help {
   color: black;
 }
+
+
 #banner {
   height: 250px;
   width: 100%;
@@ -26,6 +29,7 @@ h3 {
   padding-top: 5px;
   font-family: Arial, Helvetica, sans-serif;
 }
+
 .container {
   padding-left: 20px;
   padding-right: 20px;
@@ -65,7 +69,9 @@ h3 {
   margin-bottom: 1em;
   margin-left: 8em;
 }
+
 //old messages goes here//
+
 .output {
   margin-top: 30px;
 }
@@ -75,6 +81,8 @@ h3 {
   background-color: white;
   border: black 2px solid;
 }
+
+
 .hr-lines {
   margin-top: 2px;
   margin-bottom: 2px;
@@ -153,6 +161,7 @@ hr {
   padding: 5px;
   z-index: 1;
 }
+
 // this is so that message can have overflow effect.
 .messages {
   position: absolute;
@@ -165,4 +174,4 @@ hr {
   padding-left: 2em;
   padding-right: 2em;
   margin-bottom: 15px;
-}
+

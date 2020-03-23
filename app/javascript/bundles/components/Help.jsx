@@ -1,14 +1,16 @@
+
 import React, { useState } from "react"
 import axios from "axios"
 import { Modal, Button } from "react-bootstrap"
 import Map from "../Map"
-import Emoji from "emoji-regex"
+
 const INPUTS = [
   { value: "women", label: "Women" },
   { value: "shelter", label: "Shelter" },
   { value: "lgbtq", label: "LGBTQ" },
   { value: "youth", label: "Youth" }
 ]
+
 const Help = () => {
   //state parameters of the component
   const [outputs, setOutputs] = useState([])
@@ -16,10 +18,12 @@ const Help = () => {
   const [yogaMapName, setYogaMapName] = useState("")
   const [longitude, setLongitude] = useState("")
   const [latitude, setLatitude] = useState("")
+
   const [messagesClass, setMessagesClass] = useState("messages")
   //get data from api
   const handleInputClick = input => {
     setMessagesClass("messages messages-white-background")
+
     axios
       .get(`/organizations.json?description=${input.value}`)
       .then(({ data }) => {
@@ -35,10 +39,12 @@ const Help = () => {
         setOutputs(newOutputs)
       })
   }
+
   const handleLocationClick = ({ name, longitude, latitude }) => {
     {
       //show the modal
       setModal(true)
+
       //set the state parameters of the component
       setYogaMapName(name)
       setLongitude(longitude)
@@ -46,6 +52,7 @@ const Help = () => {
     }
   }
   const formatPhoneNumber = phoneNumberString => {
+
     let cleaned = ("" + phoneNumberString).replace(/\D/g, "")
     let match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/)
     if (match) {
@@ -53,15 +60,17 @@ const Help = () => {
     }
     return null
   }
+
   return (
+
     <div className="container">
       <div className="chat-box" style={{ padding: 10 }}>
         <div
           className="inputs"
           style={{
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "space-around"
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'space-around'
           }}
         >
           {INPUTS.map(input => (
@@ -75,7 +84,7 @@ const Help = () => {
             </div>
           ))}
         </div>
-        <div className={messagesClass} style={{ display: "grid" }}>
+        <div className={messagesClass} style={{ display: 'grid' }}>
           {outputs.map(output => {
             if (output.hasMap) return <Map output={output} />
             return (
@@ -103,7 +112,7 @@ const Help = () => {
                   </a>
                 </p>
                 <p>
-                  {" "}
+                  {' '}
                   <i className="fa fa-phone"></i>
                   &nbsp;
                   <a className="mobile" href={output.mobileTo}>
@@ -131,4 +140,5 @@ const Help = () => {
     </div>
   )
 }
+
 export default props => <Help {...props} />
