@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react"
-import axios from "axios"
-import { Modal, Button } from "react-bootstrap"
-import Map from "../Map"
-import "../../../assets/stylesheets/modal.scss"
-import Emoji from "emoji-regex"
+
+import React, { useState } from "react";
+import axios from "axios";
+import { Modal, Button } from "react-bootstrap";
+import Map from "../Map";
+import Emoji from "emoji-regex";
+
 const INPUTS = [
   { value: "women", label: "Women" },
   { value: "shelter", label: "Shelter" },
@@ -63,25 +64,70 @@ const Help = () => {
   }
 
   return (
-    <div>
-      <div className="container">
-        <div className="chat-box" style={{ padding: 10 }}>
-          <div
-            className="inputs"
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              justifyContent: "space-around"
-            }}
-          >
-            {INPUTS.map(input => (
-              <div className="input">
-                <button
-                  className="categoryButton"
-                  onClick={() => handleInputClick(input)}
-                >
-                  {input.label}
-                </button>
+
+    <div className="container">
+      <div className="chat-box" style={{ padding: 10 }}>
+        <div
+          className="inputs"
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-around"
+          }}
+        >
+          {INPUTS.map(input => (
+            <div className="input">
+              <button
+                className="categoryButton"
+                onClick={() => handleInputClick(input)}
+              >
+                {input.label}
+              </button>
+            </div>
+          ))}
+        </div>
+        <div className={messagesClass} style={{ display: "grid" }}>
+          {outputs.map(output => {
+            if (output.hasMap) return <Map output={output} />;
+            return (
+              <div className="output">
+                <a href="https://www.google.com/search?q=yoga">
+                  <Button variant="danger">Escape {}</Button>{" "}
+                </a>
+                <p>{output.name}</p>
+                <p>{output.resource_description}</p>
+                <p>
+                  <i className="fa fa-location-arrow"></i>
+                  &nbsp;
+                  {output.address}
+                  &nbsp; [
+                  <a
+                    className="address"
+                    onClick={() => handleLocationClick(output)}
+                  >
+                    show directions
+                  </a>
+                  ]
+                </p>
+                <p>
+                  <i className="fas fa-link"></i>
+                  &nbsp;
+                  <a className="info" href={output.website} target="_blank">
+                    {output.website}
+                  </a>
+                </p>
+                <p>
+                  {" "}
+                  <i className="fa fa-phone"></i>
+                  &nbsp;
+                  <a className="mobile" href={output.mobileTo}>
+                    {output.mobile}
+                  </a>
+                </p>
+                <a href="https://www.google.com/search?q=yoga">
+                  <Button variant="danger">Escape {}</Button>{' '}
+                </a>
+                <hr />
               </div>
             ))}
           </div>
@@ -127,17 +173,17 @@ const Help = () => {
             })}
           </div>
         </div>
-        <div className="modal-dialog">
-          <Modal size="lg" show={showModal} onHide={() => setModal(false)}>
-            <Modal.Header closeButton>
-              <Modal.Title>{yogaMapName}</Modal.Title>
-            </Modal.Header>
+      </div>
 
-            <Modal.Body>
-              <Map lng={longitude} lat={latitude} />
-            </Modal.Body>
-          </Modal>
-        </div>{" "}
+      <div>
+        <Modal size="lg" show={showModal} onHide={() => setModal(false)}>
+          <Modal.Header closeButton>
+            <Modal.Title>{yogaMapName}</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <Map lng={longitude} lat={latitude} />
+          </Modal.Body>
+        </Modal>
       </div>
     </div>
   )
