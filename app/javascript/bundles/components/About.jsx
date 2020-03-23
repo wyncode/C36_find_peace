@@ -7,16 +7,16 @@ import FavardTristan from "../../../assets/images/FavardTristan.jpg"
 import github from "../../../assets/images/github.jpeg"
 import linkedin from "../../../assets/images/linkedin.png"
 import about from "../../../assets/images/about-us-banner-plain.png"
-
 const About = () => {
   return (
     <>
       {/* <div className="banner"></div> */}
       <img src={about} alt="about" className="about-us-banner" />
-
       <div>
         <p className="about-quote">
-          "Here is an emotional quote about peace and blah blah blah...."
+          "It doesn't take a lot of strength to hang on. It takes a lot of
+          strength to let go."
+          <p>-J.C. Watts</p>
         </p>
       </div>
       <div className="flex-picture-names">
@@ -80,12 +80,6 @@ const About = () => {
             </a>
           </div>
         </div>
-      </div>
-      <div>
-        <p className="blurb">
-          We made this website because we love yoga - so much. Downard dog, all
-          the things.
-        </p>
       </div>
     </>
   )

@@ -1,29 +1,25 @@
-import React, { useState } from "react";
-import axios from "axios";
-import { Modal, Button } from "react-bootstrap";
-import Map from "../Map";
-import Emoji from "emoji-regex";
+import React, { useState } from "react"
+import axios from "axios"
+import { Modal, Button } from "react-bootstrap"
+import Map from "../Map"
+import Emoji from "emoji-regex"
 const INPUTS = [
   { value: "women", label: "Women" },
   { value: "shelter", label: "Shelter" },
   { value: "lgbtq", label: "LGBTQ" },
   { value: "youth", label: "Youth" }
-];
-
+]
 const Help = () => {
   //state parameters of the component
-  const [outputs, setOutputs] = useState([]);
-  const [showModal, setModal] = useState(false);
-  const [yogaMapName, setYogaMapName] = useState("");
-  const [longitude, setLongitude] = useState("");
-  const [latitude, setLatitude] = useState("");
-
-  const [messagesClass, setMessagesClass] = useState("messages");
-
+  const [outputs, setOutputs] = useState([])
+  const [showModal, setModal] = useState(false)
+  const [yogaMapName, setYogaMapName] = useState("")
+  const [longitude, setLongitude] = useState("")
+  const [latitude, setLatitude] = useState("")
+  const [messagesClass, setMessagesClass] = useState("messages")
   //get data from api
   const handleInputClick = input => {
-    setMessagesClass("messages messages-white-background");
-
+    setMessagesClass("messages messages-white-background")
     axios
       .get(`/organizations.json?description=${input.value}`)
       .then(({ data }) => {
@@ -35,32 +31,28 @@ const Help = () => {
           mobile: formatPhoneNumber(org.regular_phone_number),
           mobileTo: `tel:${org.regular_phone_number}`,
           ...org
-        }));
-        setOutputs(newOutputs);
-      });
-  };
-
+        }))
+        setOutputs(newOutputs)
+      })
+  }
   const handleLocationClick = ({ name, longitude, latitude }) => {
     {
       //show the modal
-      setModal(true);
-
+      setModal(true)
       //set the state parameters of the component
-      setYogaMapName(name);
-      setLongitude(longitude);
-      setLatitude(latitude);
+      setYogaMapName(name)
+      setLongitude(longitude)
+      setLatitude(latitude)
     }
-  };
-
+  }
   const formatPhoneNumber = phoneNumberString => {
-    let cleaned = ("" + phoneNumberString).replace(/\D/g, "");
-    let match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/);
+    let cleaned = ("" + phoneNumberString).replace(/\D/g, "")
+    let match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/)
     if (match) {
-      return "(" + match[1] + ") " + match[2] + "-" + match[3];
+      return "(" + match[1] + ") " + match[2] + "-" + match[3]
     }
-    return null;
-  };
-
+    return null
+  }
   return (
     <div className="container">
       <div className="chat-box" style={{ padding: 10 }}>
@@ -85,12 +77,9 @@ const Help = () => {
         </div>
         <div className={messagesClass} style={{ display: "grid" }}>
           {outputs.map(output => {
-            if (output.hasMap) return <Map output={output} />;
+            if (output.hasMap) return <Map output={output} />
             return (
               <div className="output">
-                <a href="https://www.google.com/search?q=yoga">
-                  <Button variant="danger">Escape {}</Button>{" "}
-                </a>
                 <p>{output.name}</p>
                 <p>{output.resource_description}</p>
                 <p>
@@ -122,15 +111,13 @@ const Help = () => {
                   </a>
                 </p>
                 <a href="https://www.google.com/search?q=yoga">
-                  <Button variant="danger">Escape {}</Button>{' '}
+                  <Button variant="danger">Escape {}</Button>{" "}
                 </a>
-                <hr />
               </div>
-            );
+            )
           })}
         </div>
       </div>
-
       <div>
         <Modal size="lg" show={showModal} onHide={() => setModal(false)}>
           <Modal.Header closeButton>
@@ -142,7 +129,6 @@ const Help = () => {
         </Modal>
       </div>
     </div>
-  );
-};
-
-export default props => <Help {...props} />;
+  )
+}
+export default props => <Help {...props} />
